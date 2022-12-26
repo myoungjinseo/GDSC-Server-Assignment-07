@@ -4,6 +4,7 @@ import com.example.security.entity.Role;
 import com.example.security.entity.User;
 import com.example.security.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,7 +33,10 @@ public class AuthController {
     public String admin(){
         return "어드민 페이지 입니다.";
     }
-
+    @GetMapping("/myinfo")
+    public String myInfo(@AuthenticationPrincipal User user) {
+        return (user == null) ? "유저 정보 없음" : user.getAuthorities().toString();
+    }
     @GetMapping("/signup")
     public String 회원가입(@RequestParam String username, @RequestParam String password, @RequestParam boolean isAdmin){
         Set<Role> set = new HashSet<>();
