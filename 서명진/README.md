@@ -1,13 +1,4 @@
-# 22-23 Server Assignment 7
-
-스프링 시큐리티 과제
-
-## 주의할 점
-
-1. fork 후 기본 파일들을 건들면 안되용
-2. 프로젝트명을 꼭 자기이름으로(ex - 한현수)로 해주세요.
-3. PR 보낼 때 설명과 레퍼런스 출처를 적어주세요.
-
+# 클래스, 인터페이스 정리
 Authenticationfilter = request 인증, 인가 진행해주는 부분
 UsernamePasswordAuthenticationToken = 토큰 기반 인증 방식을 처리해주는 부분
 AuthesticationManager = 
@@ -15,7 +6,7 @@ AuthenticationProvider = authentication을 수행하는 주체
 UserDetialService = 인증과 관련된 일을 처리할 때 User의 정보를 가져오는 부분
 
 
-
+# 요약 
 1.request가 들어오면 이를 Authenticationfilter가 낚아챈다.
 2.Authenticationfilter에서는 이를 UsernamePasswordAuthenticationToken에 넘겨주어
 3.Authentication 객체로 만든다.
